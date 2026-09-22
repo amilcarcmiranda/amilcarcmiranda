@@ -1,4 +1,11 @@
 name: Deploy
-on: [push] # ou especifique branches: on: push: branches: [ main ]
+on: [push]
 jobs:
-# ... configuração dos jobs ...
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        
+      - name: Teste simples
+        run: echo "O workflow já não tem erros de sintaxe!"
